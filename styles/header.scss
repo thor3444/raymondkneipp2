@@ -1,0 +1,163 @@
+@import "./base";
+
+.header {
+	font-family: $font;
+	padding: 1.5em 0;
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	background: linear-gradient(90deg, $blue, $green);
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	h3 {
+		font-size: 1.5em;
+		margin: 0;
+		color: white;
+		font-weight: $bold;
+		cursor: pointer;
+		text-shadow: 0.08em 0.08em 0 transparentize($black, 0.8);
+		flex: 1;
+
+		a {
+			display: flex;
+			align-items: center;
+		}
+
+		.logo {
+			width: 40px;
+			margin-right: 0.8em;
+			// display: none;
+		}
+	}
+
+	.links {
+		a {
+			color: white;
+			text-decoration: none;
+			font-weight: $normal;
+			font-size: 1.1em;
+			padding: 0.8em 0.8em;
+			border-radius: 0.4em;
+			transition: background-color 0.3s;
+			margin-left: 0.2em;
+
+			&:hover {
+				background-color: transparentize($black, 0.9);
+			}
+		}
+	}
+
+	.toggle {
+		background: none;
+		border: none;
+		display: none;
+		padding: 0 8px;
+		border-radius: 0.4em;
+		cursor: pointer;
+		transition: background-color 0.2s ease-out;
+
+		// &:focus,
+		&:hover {
+			outline: none;
+			background-color: transparentize(white, 0.7) !important;
+		}
+
+		.bar {
+			width: 25px;
+			height: 3px;
+			background-color: white;
+			margin: 8px 0;
+			transition: all 0.3s ease-out;
+		}
+	}
+}
+
+@media #{$md} {
+	.header {
+		.name {
+			display: none;
+		}
+	}
+}
+
+@media #{$sm} {
+	.header {
+		&.open {
+			background: $black;
+			box-shadow: 0 0.4em 0 transparentize($black, 0.8);
+
+			// .toggle:focus {
+			// 	background-color: transparentize(white, 0.9);
+			// }
+
+			.name {
+				display: none;
+			}
+
+			h3 {
+				flex: 0;
+			}
+
+			.toggle {
+				.bar:nth-child(1) {
+					transform: translateY(11px) rotate(45deg);
+				}
+
+				.bar:nth-child(2) {
+					transform: scale(0);
+				}
+
+				.bar:nth-child(3) {
+					transform: translateY(-11px) rotate(-45deg);
+				}
+			}
+		}
+
+		h3 {
+			align-self: flex-start;
+
+			.name {
+				// display: none;
+				flex: 1;
+				text-align: center;
+				font-size: 0.8em;
+			}
+
+			.logo {
+				display: inline-block !important;
+			}
+		}
+
+		.links {
+			display: none;
+			flex-grow: 1;
+			margin: 0 1em;
+
+			a {
+				margin-left: 0;
+				text-align: center;
+
+				&:hover {
+					background-color: transparentize(white, 0.9);
+				}
+			}
+
+			&.open {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+
+		.toggle {
+			display: block;
+			align-self: flex-start;
+		}
+	}
+}

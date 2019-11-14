@@ -1,0 +1,104 @@
+@import "./base";
+
+.project {
+	font-family: $font;
+	padding: 3em 0;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+
+	h3 {
+		font-size: 2em;
+		margin: 0 0 0.3em 0;
+		color: white;
+		font-weight: $bold;
+	}
+
+	.images {
+		width: 40%;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+
+		img {
+			border-radius: 0.4em;
+			box-shadow: 0.2em 0.2em 0 transparentize($black, 0.8);
+		}
+
+		.desktop {
+			width: 70%;
+			margin-right: 10px;
+		}
+
+		.mobile {
+			width: 20%;
+		}
+	}
+
+	.description {
+		width: 60%;
+
+		.tags {
+			display: flex;
+			flex-flow: row wrap;
+
+			span {
+				background: lighten($blue, 10%);
+				border-radius: 1em;
+				padding: 5px 8px;
+				font-size: 0.9em;
+				margin: 4px;
+				color: white;
+				white-space: nowrap;
+			}
+		}
+
+		p {
+			color: white;
+			margin: 0.8em 0 1em;
+			text-align: justify;
+			font-size: 1.2em;
+		}
+
+		.links {
+			display: flex;
+			flex-flow: row nowrap;
+		}
+	}
+}
+
+@media #{$md} {
+	.project {
+		flex-direction: column;
+
+		h3 {
+			margin-top: 0.6em !important;
+		}
+	}
+
+	.images {
+		width: 100% !important;
+	}
+
+	.description {
+		width: 100% !important;
+	}
+}
+
+@media #{$sm} {
+	.project {
+		flex-direction: column;
+
+		h3 {
+			margin-top: 0.6em !important;
+		}
+	}
+
+	.images {
+		width: 100% !important;
+	}
+
+	.description {
+		width: 100% !important;
+	}
+}

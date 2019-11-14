@@ -1,0 +1,16 @@
+@import "./base";
+
+.projects {
+	font-family: $font;
+	padding: 4em 0;
+	// background-color: $blue;
+	background: linear-gradient(90deg, $blue, $green);
+
+	h1 {
+		font-size: 3.5em;
+		margin: 0 0 0.2em 0;
+		color: white;
+		text-align: center;
+		font-weight: $bold;
+	}
+}

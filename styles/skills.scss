@@ -1,0 +1,72 @@
+@import "./base";
+
+.skills {
+	font-family: $font;
+	padding: 0 0 4em 0;
+
+	h2 {
+		font-size: 2.8em;
+		text-align: center;
+		margin: 0 0 0.2em 0;
+		color: $blue;
+		font-weight: $bold;
+	}
+
+	.layout {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		justify-content: center;
+
+		.group {
+			width: 50%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: flex-start;
+
+			h3 {
+				font-size: 2em;
+				margin: 0 0 1em 0;
+				color: $blue;
+				font-weight: $bold;
+				text-align: center;
+				width: 100%;
+			}
+
+			.block {
+				width: 33%;
+				box-sizing: border-box;
+				display: flex;
+				flex-direction: column;
+				margin-bottom: 1em;
+
+				.icon {
+					color: black;
+					height: 64px;
+					opacity: 0.5;
+				}
+
+				p {
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+@media #{$md} {
+	.group {
+		width: 100% !important;
+	}
+}
+
+@media #{$sm} {
+	.group {
+		width: 100% !important;
+
+		.icon {
+			height: 50px !important;
+		}
+	}
+}

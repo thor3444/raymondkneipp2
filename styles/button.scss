@@ -1,0 +1,29 @@
+@import "./base";
+
+.button {
+    color: $blue;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.5rem 0.8rem;
+    margin-right: 0.8rem;
+    border-radius: 0.4rem;
+    background-color: white;
+    transition: background-color 0.3s ease-out;
+    font-weight: $bold;
+    box-shadow: 0.2rem 0.2rem 0 transparentize($black, 0.8);
+    font-size: 1.1rem;
+
+    &:hover {
+        background-color: darken(white, 15%);
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .icon {
+        height: 1.5rem;
+        margin-right: 0.3rem;
+    }
+}

@@ -1,0 +1,142 @@
+@import "./base";
+
+.contact {
+	font-family: $font;
+	text-align: center;
+	padding: 4em 0;
+	position: relative;
+
+	h1 {
+		font-size: 3.5em;
+		margin: 0 0 0.2em 0;
+		color: $blue;
+		font-weight: $bold;
+	}
+
+	form {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: flex-start;
+		width: 50%;
+		margin: auto;
+
+		label {
+			font-size: 0.9em;
+			margin-bottom: 5px;
+			color: transparentize($black, 0.5);
+		}
+
+		input,
+		textarea {
+			width: 100%;
+			border-radius: 0.4em;
+			// border: 1px solid transparentize($black, 0.5);
+			background-color: #eeeeee;
+			border: none;
+			box-sizing: border-box;
+			font-size: 1.1em;
+			margin-bottom: 25px;
+			padding: 0.8em 1em;
+			box-shadow: 0.2rem 0.2rem 0 transparentize($black, 0.8);
+
+			&:disabled {
+				background: lighten($black, 70%);
+			}
+		}
+
+		textarea {
+			resize: vertical;
+		}
+
+		button {
+			color: white;
+			display: flex;
+			align-items: center;
+			padding: 0.5rem 0.8rem;
+			margin-right: 0.8rem;
+			border-radius: 0.4rem;
+			background-color: $blue;
+			transition: background-color 0.3s ease-out;
+			font-weight: $bold;
+			box-shadow: 0.2rem 0.2rem 0 transparentize($black, 0.8);
+			font-size: 1.1rem;
+			cursor: pointer;
+			border: none;
+
+			&:hover {
+				background: lighten($blue, 10%);
+			}
+
+			&:disabled {
+				background: lighten($black, 30%);
+			}
+
+			.icon {
+				height: 1.5rem;
+				margin-right: 0.3rem;
+			}
+		}
+	}
+
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background-color: transparentize($black, 0.2);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		h3 {
+			font-size: 2em;
+			margin: 0;
+			color: $blue;
+			font-weight: $bold;
+			background-color: white;
+			padding: 0.5em 1em;
+			border-radius: 0.4em;
+			box-shadow: 0.2em 0.2em 0 transparentize($black, 0.8);
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+
+			.icon {
+				height: 1.4em;
+				margin-right: 0.5em;
+			}
+
+			.spin {
+				animation: spin 4s linear infinite;
+			}
+		}
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media #{$md} {
+	.contact {
+		form {
+			width: 70% !important;
+		}
+	}
+}
+
+@media #{$sm} {
+	.contact {
+		form {
+			width: 100% !important;
+			max-width: 400px;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+@import "./base";
+
+.about {
+	font-family: $font;
+	text-align: center;
+	padding: 4em 0;
+
+	h1 {
+		font-size: 3.5em;
+		margin: 0 0 0.2em 0;
+		color: $blue;
+		font-weight: $bold;
+	}
+
+	p {
+		margin: auto;
+		font-weight: $light;
+		color: $black;
+		font-size: 1.2em;
+		width: 60%;
+	}
+}
+
+@media #{$md} {
+	.about {
+		p {
+			width: 100%;
+		}
+	}
+}
+
+@media #{$sm} {
+	.about {
+		p {
+			width: 100%;
+		}
+	}
+}

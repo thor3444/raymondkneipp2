@@ -33,7 +33,11 @@ const Landing = () => (
           />
         </div>
       </div>
-      <img src="../static/images/undraw_code_thinking_1jeh.svg" alt="RK" className={css.logo} />
+      <img
+        src="../static/images/undraw_source_code_xx2e.svg"
+        alt="RK"
+        className={css.logo}
+      />
     </div>
   </section>
 );
